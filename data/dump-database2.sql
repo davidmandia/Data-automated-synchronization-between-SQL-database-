@@ -65,6 +65,19 @@ CREATE TABLE `compounds` (
 ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
+
+-- Modifications to the table `compounds` in database2
+-- -- Step 1: Modify the `compounds` table schema
+-- ALTER TABLE compounds MODIFY COLUMN compoundid INT;
+
+-- -- Step 2: Update the `compoundid` values to match `pkey`
+-- UPDATE compounds SET compoundid = pkey;
+
+-- -- Step 3: (Optional) Drop the `compoundid` column if not needed
+-- ALTER TABLE compounds DROP COLUMN compoundid;
+
+
+
 --
 -- Dumping data for table `compounds`
 --

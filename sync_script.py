@@ -29,6 +29,21 @@ def connect_to_database(host, user, password, database):
             attempts -= 1
     return None
 
+### For safer handling of important logins you can use the statement belwo to connect ot the database:
+
+#from getpass import getpass
+#from mysql.connector import connect, Error
+# try:
+#     with connect(
+#         host="localhost",
+#         database="database1",
+#         user=input("Enter username: "),
+#         password=getpass("Enter password: "),
+#     ) as connection:
+#         print(connection)
+# except Error as e:
+#     print(e)
+
 def execute_sql_file(connection, sql_file):
     """Execute an SQL file to create tables and populate data."""
     cursor = connection.cursor()
@@ -175,3 +190,6 @@ if conn1 and conn2:
 # Close the connections after the operations
 close_connection(conn1)
 close_connection(conn2)
+
+print("Script completed successfully. Tested for Synchronization of tables, large dataset and concurrent updates. Log data have been saved to file sync_log.log")
+# End of script

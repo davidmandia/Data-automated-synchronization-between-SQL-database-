@@ -22,7 +22,7 @@ This Python script is designed to synchronize data between two MySQL databases, 
   - `logging`
 
 ## Installation
-    ```
+  
 3. Install the required Python packages:
     ```bash
     pip install mysql-connector-python
